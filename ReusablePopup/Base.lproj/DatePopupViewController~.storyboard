@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="FirstViewController" customModule="ReusablePopup" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,31 +21,70 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Select Date"/>
                                 <connections>
-                                    <segue destination="IaR-pP-FU9" kind="presentation" animates="NO" id="u6A-9N-hPB"/>
+                                    <segue destination="lci-zS-4CV" kind="presentation" animates="NO" id="u6A-9N-hPB"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="5JZ-p4-kRO"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="5JZ-p4-kRO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="990" y="-451"/>
+            <point key="canvasLocation" x="989.85507246376824" y="75.669642857142847"/>
         </scene>
-        <!--SelectTimeViewController-->
-        <scene sceneID="F56-kq-iRb">
+        <!--Date Popup View Controller-->
+        <scene sceneID="8XE-9O-8um">
             <objects>
-                <viewControllerPlaceholder storyboardName="SelectTimeViewController" id="xha-az-seJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Mpv-3y-aGz"/>
-                    <navigationItem key="navigationItem" id="26X-Vt-qAd"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Lw2-L3-f96" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController modalPresentationStyle="overCurrentContext" id="lci-zS-4CV" customClass="DatePopupViewController" customModule="ReusablePopup" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Y6M-9f-i9R">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1gK-6W-xSW">
+                                <rect key="frame" x="47" y="285" width="320" height="310"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="gcm-S5-SfR">
+                                        <rect key="frame" x="15" y="64" width="290" height="208"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2X-vd-aHO">
+                                        <rect key="frame" x="140" y="274" width="42" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="saveButtonPressed:" destination="lci-zS-4CV" eventType="touchUpInside" id="0TH-j8-vlz"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="niA-8R-wyQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1cJ-OX-Oi1"/>
+                        <color key="backgroundColor" red="0.75823558460582385" green="0.75823558460582385" blue="0.75823558460582385" alpha="0.50927987003957986" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jXO-GK-7cY"/>
+                    <connections>
+                        <outlet property="datePicker" destination="gcm-S5-SfR" id="0Ll-Eo-ANe"/>
+                        <outlet property="saveButton" destination="q2X-vd-aHO" id="LGD-Kx-Hy9"/>
+                        <outlet property="titleLabel" destination="niA-8R-wyQ" id="dxI-Sf-Psu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NpJ-Ko-SIA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-63" y="664"/>
+            <point key="canvasLocation" x="2155" y="76"/>
         </scene>
-        <!--Second View Controller-->
+        <!--Item-->
         <scene sceneID="IkE-i5-8xn">
             <objects>
                 <viewController id="klN-Ny-GZv" customClass="SecondViewController" customModule="ReusablePopup" customModuleProvider="target" sceneMemberID="viewController">
@@ -58,19 +97,19 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Select Date"/>
                                 <connections>
-                                    <segue destination="IaR-pP-FU9" kind="presentation" id="5F5-VV-iw8"/>
+                                    <segue destination="lci-zS-4CV" kind="presentation" id="5F5-VV-iw8"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DyS-Ge-v8B"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="85D-xq-KQk"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="85D-xq-KQk"/>
                     <navigationItem key="navigationItem" id="TWY-Fx-4V4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Z3-uQ-O3x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="990" y="435"/>
+            <point key="canvasLocation" x="990" y="866"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="C88-Pf-K1m">
@@ -84,20 +123,11 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="TF8-zj-JzU"/>
                         <segue destination="klN-Ny-GZv" kind="relationship" relationship="viewControllers" id="HfY-Ba-adM"/>
-                        <segue destination="xha-az-seJ" kind="relationship" relationship="viewControllers" id="tGg-r1-baP"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fdk-7I-feY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-62.318840579710148" y="76.339285714285708"/>
-        </scene>
-        <!--DatePopupViewController-->
-        <scene sceneID="HnO-fX-F43">
-            <objects>
-                <viewControllerPlaceholder storyboardName="DatePopupViewController" id="IaR-pP-FU9" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E2t-zf-X1R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1930" y="-160"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -106,6 +136,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
