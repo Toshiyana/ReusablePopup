@@ -17,7 +17,9 @@ class SelectTimeViewController: UIViewController {
     
     @IBAction func selectTimeButtonPressed() {
         let sb = UIStoryboard(name: "DatePopupViewController", bundle: nil)
-        let popup = sb.instantiateInitialViewController()!//storyboardが存在することは確実なので、if letでなく!を用いる。
+        //storyboardが存在することは確実なので、if letでなく!を用いる。
+        let popup = sb.instantiateInitialViewController()! as! DatePopupViewController
+        popup.showTimePicker = true
         self.present(popup, animated: true)
     }
     
