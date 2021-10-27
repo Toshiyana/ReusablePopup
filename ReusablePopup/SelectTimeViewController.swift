@@ -15,15 +15,11 @@ class SelectTimeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func selectTimeButtonPressed() {
+        let sb = UIStoryboard(name: "DatePopupViewController", bundle: nil)
+        let popup = sb.instantiateInitialViewController()!//storyboardが存在することは確実なので、if letでなく!を用いる。
+        self.present(popup, animated: true)
     }
-    */
+    
 
 }

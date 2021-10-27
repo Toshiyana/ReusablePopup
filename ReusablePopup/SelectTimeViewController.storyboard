@@ -17,11 +17,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PN2-NU-QgL">
-                                <rect key="frame" x="317" y="44" width="77" height="53"/>
+                                <rect key="frame" x="315" y="44" width="81" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Select Time"/>
                                 <connections>
-                                    <segue destination="4KN-jI-pWV" kind="presentation" id="Let-Xt-hta"/>
+                                    <action selector="selectTimeButtonPressed" destination="HDz-tx-QGu" eventType="touchUpInside" id="Rae-QC-Jx2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -34,14 +34,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Szg-1v-q57" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-347.82608695652175" y="-22.098214285714285"/>
-        </scene>
-        <!--DatePopupViewController-->
-        <scene sceneID="QQb-CY-jog">
-            <objects>
-                <viewControllerPlaceholder storyboardName="DatePopupViewController" id="4KN-jI-pWV" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SBP-p2-R9R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="479" y="-116"/>
         </scene>
     </scenes>
     <resources>
