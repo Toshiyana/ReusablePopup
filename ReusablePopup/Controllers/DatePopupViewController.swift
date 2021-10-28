@@ -12,6 +12,7 @@ class DatePopupViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var popupView: UIView!
     
     var showTimePicker: Bool = false
     
@@ -37,6 +38,20 @@ class DatePopupViewController: UIViewController {
             datePicker.datePickerMode = .time
             saveButton.setTitle("Save Time", for: .normal)
         }
+        
+        // pattern1: make UIViewCorner rounded (not include shadow)
+//        popupView.layer.cornerRadius = 15
+//        popupView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+//        popupView.layer.masksToBounds = true
+        
+        // pattern2: add shadow to UIView (not include round)
+        // popupView.layer.masksToBoundsはデフォルトでfalse
+        popupView.layer.shadowOffset = CGSize(width: 10, height: 10)
+        popupView.layer.shadowRadius = 15
+        popupView.layer.shadowOpacity = 0.5
+        
+        // pattern3: round + shadow は面倒なので省略
+        
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {

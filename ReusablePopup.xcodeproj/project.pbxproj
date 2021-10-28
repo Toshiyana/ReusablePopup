@@ -92,8 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				991FC76527291256007102F3 /* Main.storyboard */,
-				991FC77D27292995007102F3 /* DatePopupViewController.storyboard */,
 				991FC78227292AF4007102F3 /* SelectTimeViewController.storyboard */,
+				991FC77D27292995007102F3 /* DatePopupViewController.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";

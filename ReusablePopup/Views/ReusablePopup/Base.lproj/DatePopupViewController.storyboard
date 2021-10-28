@@ -50,6 +50,7 @@
                     <navigationItem key="navigationItem" id="jXO-GK-7cY"/>
                     <connections>
                         <outlet property="datePicker" destination="gcm-S5-SfR" id="0Ll-Eo-ANe"/>
+                        <outlet property="popupView" destination="1gK-6W-xSW" id="xpS-rJ-xTa"/>
                         <outlet property="saveButton" destination="q2X-vd-aHO" id="LGD-Kx-Hy9"/>
                         <outlet property="titleLabel" destination="niA-8R-wyQ" id="dxI-Sf-Psu"/>
                     </connections>
