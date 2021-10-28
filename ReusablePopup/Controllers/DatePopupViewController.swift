@@ -15,6 +15,20 @@ class DatePopupViewController: UIViewController {
     
     var showTimePicker: Bool = false
     
+    // computed property(only getter)
+    // datePickerから取得するdateのformatを整える変数
+    var fomattedDate: String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        return formatter.string(from: datePicker.date)
+    }
+    
+    var formattedTime: String {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        return formatter.string(from: datePicker.date)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,6 +40,7 @@ class DatePopupViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
+        NotificationCenter.default.post(name: .saveDateTime, object: self)//popupオブジェクトをpostする
         dismiss(animated: false)
     }
     

@@ -22,6 +22,5 @@ class SelectTimeViewController: UIViewController {
         popup.showTimePicker = true
         self.present(popup, animated: true)
     }
-    
 
 }
