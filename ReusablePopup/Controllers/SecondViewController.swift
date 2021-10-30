@@ -25,7 +25,6 @@ class SecondViewController: UIViewController {
             popup.onSave = { (data: String) -> () in
                 self.dateLabel.text = data
             }
-            UIView.animate(withDuration: 0.3, animations: <#T##() -> Void#>)
         }
     }
     

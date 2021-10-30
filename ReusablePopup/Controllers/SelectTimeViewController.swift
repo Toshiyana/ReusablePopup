@@ -9,6 +9,8 @@ import UIKit
 
 class SelectTimeViewController: UIViewController {
 
+    @IBOutlet weak var timeLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,7 +22,18 @@ class SelectTimeViewController: UIViewController {
         //storyboardが存在することは確実なので、if letでなく!を用いる。
         let popup = sb.instantiateInitialViewController()! as! DatePopupViewController
         popup.showTimePicker = true
+        
+        popup.delegate = self
+        
         self.present(popup, animated: true)
     }
 
+}
+
+extension SelectTimeViewController: PopupDelegate {
+    func popupValueSelected(value: String) {
+        timeLabel.text = value
+    }
+    
+    
 }

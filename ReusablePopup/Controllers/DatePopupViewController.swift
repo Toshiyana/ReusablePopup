@@ -19,6 +19,8 @@ class DatePopupViewController: UIViewController {
     // 今回、初期値は持ちたくないのでoptional
     var onSave: ((_ data: String) -> ())?
     
+    var delegate: PopupDelegate?
+    
     // computed property(only getter)
     // datePickerから取得するdateのformatを整える変数
     var formattedDate: String {
@@ -62,11 +64,14 @@ class DatePopupViewController: UIViewController {
         // FirstViewController：NotificationCenterを利用
         NotificationCenter.default.post(name: .saveDateTime, object: self)//popupオブジェクトをpostする
         
-        // SecondViewController：Callbacksを利用
+        // SecondViewController：Callbacksを利用 (onSave?(formattedTime))
+        // SelectTimeViewController: Delegateを利用
         if showTimePicker {
             onSave?(formattedTime)
+            delegate?.popupValueSelected(value: formattedTime)
         } else {
             onSave?(formattedDate)
+            delegate?.popupValueSelected(value: formattedDate)
         }
         
         dismiss(animated: false)

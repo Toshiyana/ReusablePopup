@@ -19,6 +19,7 @@
 		991FC78627292B2F007102F3 /* SelectTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991FC78527292B2F007102F3 /* SelectTimeViewController.swift */; };
 		991FC78C272956C9007102F3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991FC78B272956C9007102F3 /* FirstViewController.swift */; };
 		991FC790272A5355007102F3 /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991FC78F272A5355007102F3 /* NotificationNameExtension.swift */; };
+		99CCCA75272D6CF500E329E7 /* PopupDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CCCA74272D6CF500E329E7 /* PopupDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		991FC78527292B2F007102F3 /* SelectTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTimeViewController.swift; sourceTree = "<group>"; };
 		991FC78B272956C9007102F3 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		991FC78F272A5355007102F3 /* NotificationNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExtension.swift; sourceTree = "<group>"; };
+		99CCCA74272D6CF500E329E7 /* PopupDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			children = (
 				991FC75F27291256007102F3 /* AppDelegate.swift */,
 				991FC76127291256007102F3 /* SceneDelegate.swift */,
+				99CCCA74272D6CF500E329E7 /* PopupDelegate.swift */,
 				991FC793272A5377007102F3 /* Extensions */,
 				991FC794272A5391007102F3 /* Views */,
 				991FC795272A53D0007102F3 /* Controllers */,
@@ -186,6 +189,7 @@
 				991FC76027291256007102F3 /* AppDelegate.swift in Sources */,
 				991FC78C272956C9007102F3 /* FirstViewController.swift in Sources */,
 				991FC76227291256007102F3 /* SceneDelegate.swift in Sources */,
+				99CCCA75272D6CF500E329E7 /* PopupDelegate.swift in Sources */,
 				991FC790272A5355007102F3 /* NotificationNameExtension.swift in Sources */,
 				991FC77A27291888007102F3 /* DatePopupViewController.swift in Sources */,
 			);
