@@ -31,9 +31,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification Center" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygi-WI-3Ju">
+                                <rect key="frame" x="93" y="431" width="228" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ygi-WI-3Ju" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="D8H-LW-U2g"/>
+                            <constraint firstItem="ygi-WI-3Ju" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rhb-dW-jCK"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="5JZ-p4-kRO"/>
                     <connections>
@@ -68,7 +78,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Select Date"/>
                                 <connections>
-                                    <segue destination="IaR-pP-FU9" kind="presentation" id="5F5-VV-iw8"/>
+                                    <segue destination="IaR-pP-FU9" kind="presentation" identifier="toDatePopupViewControllerSegue" id="5F5-VV-iw8"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iba-Nf-kHX">
@@ -78,9 +88,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Callbacks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxE-nr-vVA">
+                                <rect key="frame" x="148" y="431" width="118" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DyS-Ge-v8B"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AxE-nr-vVA" firstAttribute="centerY" secondItem="Q1p-Lt-edU" secondAttribute="centerY" id="tkn-d8-MWq"/>
+                            <constraint firstItem="AxE-nr-vVA" firstAttribute="centerX" secondItem="Q1p-Lt-edU" secondAttribute="centerX" id="vtm-dg-IfP"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="more" id="85D-xq-KQk"/>
                     <navigationItem key="navigationItem" id="TWY-Fx-4V4"/>

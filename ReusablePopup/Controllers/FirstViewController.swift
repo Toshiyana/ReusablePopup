@@ -19,7 +19,7 @@ class FirstViewController: UIViewController {
         observer = NotificationCenter.default.addObserver(
             forName: .saveDateTime, object: nil, queue: OperationQueue.main) { (notification) in
             let dateVc = notification.object as! DatePopupViewController//DatePopupViewControllerでpostしたpopupを取得
-            self.dateLabel.text = dateVc.fomattedDate
+            self.dateLabel.text = dateVc.formattedDate
         }
     }
 

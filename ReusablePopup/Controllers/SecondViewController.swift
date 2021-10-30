@@ -11,25 +11,29 @@ class SecondViewController: UIViewController {
 
     @IBOutlet weak var dateLabel: UILabel!
     
-    var observer: NSObjectProtocol?
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        observer = NotificationCenter.default.addObserver(
-            forName: .saveDateTime, object: nil, queue: OperationQueue.main) { (notification) in
-            let dateVc = notification.object as! DatePopupViewController//DatePopupViewControllerでpostしたpopupを取得
-            self.dateLabel.text = dateVc.fomattedDate
+    // using prepare(), send data from ViewController to Popup
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDatePopupViewControllerSegue" {
+            let popup = segue.destination as! DatePopupViewController
+            popup.showTimePicker = false//DatePickerを表示
+            
+            // 関数を代入する方法
+            // Pattern1: Assign to function
+            // popup.onSave = onSave
+            
+            // Pattern2: Use a closure
+            popup.onSave = { (data: String) -> () in
+                self.dateLabel.text = data
+            }
+            UIView.animate(withDuration: 0.3, animations: <#T##() -> Void#>)
         }
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        if let observer = observer {
-            NotificationCenter.default.removeObserver(observer)
-        }
-    }
-
+    // Pattern1: Assign to function
+//    func onSave(_ data: String) {
+//        dateLabel.text = data
+//    }
+    
+    
     
 }

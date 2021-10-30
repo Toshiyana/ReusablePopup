@@ -15,10 +15,13 @@ class DatePopupViewController: UIViewController {
     @IBOutlet weak var popupView: UIView!
     
     var showTimePicker: Bool = false
+    // functionの定義（functionのtypeはinput, output parameterのtype）
+    // 今回、初期値は持ちたくないのでoptional
+    var onSave: ((_ data: String) -> ())?
     
     // computed property(only getter)
     // datePickerから取得するdateのformatを整える変数
-    var fomattedDate: String {
+    var formattedDate: String {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         return formatter.string(from: datePicker.date)
@@ -55,7 +58,17 @@ class DatePopupViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
+        // PopupからViewControllerにデータを渡す
+        // FirstViewController：NotificationCenterを利用
         NotificationCenter.default.post(name: .saveDateTime, object: self)//popupオブジェクトをpostする
+        
+        // SecondViewController：Callbacksを利用
+        if showTimePicker {
+            onSave?(formattedTime)
+        } else {
+            onSave?(formattedDate)
+        }
+        
         dismiss(animated: false)
     }
     
